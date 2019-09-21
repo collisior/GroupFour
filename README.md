@@ -7,6 +7,6 @@ Fall 2019, Boston University.
 * [Camilla Satte](https://github.com/collisior)
 * [Savannah Cardenas](https://github.com/saviesavie)
 * [Yuhao He](https://github.com/)
-* Daniel?
+* [Daniel Magot](https://github.com/DanielMagat)
 
 
