@@ -9,4 +9,4 @@ Fall 2019, Boston University.
 * [Yuhao He](https://github.com/YuhaoT)
 * [Daniel Magat](https://github.com/DanielMagat)
 
-
+## Technology
