@@ -3,7 +3,7 @@
 
 ## Project idea #1
 
-Imagine you are listening to your favorite song on Spotify and you want to memorize the lyrics to sing along. In order to do so, you have to exit out of Spotify and google the song lyrics, that takes way too long! Our project idea is to provide the user with a platform that shows them interactive song lyrics along with visual imagery that will help them memorize their favorite songs. Not only does it save time from manually searching song lyrics, it will also have features that can track the amount of times a user listens to a song and save their favorite generated image-lyric combinations of the selected song.
+Imagine you are listening to your favorite song on Spotify and you want to memorize the lyrics to sing along. In order to do so, you have to exit out of Spotify and google the song lyrics, that takes way too long! Our project idea is to provide the user with a platform that shows them interactive song lyrics along with visual imagery that will help them memorize their favorite songs. Not only does it save time from manually searching song lyrics, it will also have features that can translate the lyrics of a song and save their favorite generated image-lyric combinations of the selected song.
 
 ## Project idea #2
 
