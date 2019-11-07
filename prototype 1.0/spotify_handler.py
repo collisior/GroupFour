@@ -72,7 +72,7 @@ def get_track():
     if token:
         print("USERNAME : ", username)
         sp = spotipy.Spotify(auth=token)
-        results = sp.current_user_saved_tracks(10)
+        results = sp.current_user_saved_tracks(40)
         for item in results['items']:
             track = item['track']
             track_name = track['name']
