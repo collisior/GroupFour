@@ -11,13 +11,13 @@
 
 
 Defintions:
-  client_id     : as a registered Spotify Accounts Services developer we get unique Client ID
-  response_type : code
-  redirect_uri  : if user successfully grants permission we redirect to our 'Upload/Take photo' page (where User will be able to take or upload photo for further analysis)
-  scope         : playlist-modify-public, user-library-read
-  grant_type    : authorization_code
-  response_type : "token"
-  expires_in    : time period for which the access token is valid
-  state	        : the value of the state parameter supplied in the request
+  client_id     : as a registered Spotify Accounts Services developer we get unique Client ID  
+  response_type : code  
+  redirect_uri  : if user successfully grants permission we redirect to our 'Upload/Take photo' page (where User will be able to take or upload photo for further analysis)  
+  scope         : playlist-modify-public, user-library-read  
+  grant_type    : authorization_code  
+  response_type : "token"  
+  expires_in    : time period for which the access token is valid  
+  state	        : the value of the state parameter supplied in the request  
   
   
