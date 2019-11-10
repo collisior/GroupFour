@@ -1,10 +1,23 @@
-# Pitches
+# Happy path - everything goes right - Spotify login
+
+1. From web application homepage User presses button 'Get Started'
+2. From web application backend {client_id, response_type, redirect_uri, state=None, scope} send to Spotify Accounts Service. 
+3. Web application directs user to login using Spotify Account Service. User inputs 'username' and 'password'.
+4. After successful login: prompt User to a webpage where he/she can choose to grant you access to their data.
+5. User authorizes access to the data sets defined in scopes.
+6. After the User grants permission, the Spotify Accounts Service redirects the User back to redirect_uri. The Spotify Accounts Service response includes {access_token, token_type, expires_in, state}.
+6. After the authorization code has been received, the URL will contain hash fragment with following data encoded {access_token, token_type, scope, expires_in, state}
+7. The access_token will allow web application to make requests to the Spotify Web API
 
 
-## Project idea #1
-
-Imagine you are listening to your favorite song on Spotify and you want to memorize the lyrics to sing along. In order to do so, you have to exit out of Spotify and google the song lyrics, that takes way too long! Our project idea is to provide the user with a platform that shows them interactive song lyrics along with visual imagery that will help them memorize their favorite songs. Not only does it save time from manually searching song lyrics, it will also have features that can translate the lyrics of a song and save their favorite generated image-lyric combinations of the selected song.
-
-## Project idea #2
-
-You’re moving to a new city and you need to find a new place but you have no idea how to find the perfect place that has a good transportation route to your work or school, great restaurants nearby based on your cuisine preferences, and all located in a safe location. Right now, in order to do so, you would have to manually research each of those factors (i.e. search addresses for several apartments, then separately search for transportation routes nearby and compare the search side by side and pinpoint your location to the route - all of which takes too much time and energy) Our project would gather all the information for the user and provide them with several optimal locations that satisfy all considerations the tenants care about. It provides the user with filters that will consider your safety, access to transportation, cuisine preferences, preferred attractions nearby based on your interests.
+Defintions:  
+client_id     : as a registered Spotify Accounts Services developer we get unique Client ID  
+response_type : code  
+redirect_uri  : if user successfully grants permission we redirect to our 'Upload/Take photo' page (where User will be able to take or upload photo for further analysis)  
+scope         : playlist-modify-public, user-library-read  
+grant_type    : authorization_code  
+response_type : "token"  
+expires_in    : time period for which the access token is valid  
+state	        : the value of the state parameter supplied in the request  
+  
+  
