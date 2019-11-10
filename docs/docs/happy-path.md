@@ -1,5 +1,4 @@
-# Happy path - everything goes right
-# Spotify login
+# Happy path - everything goes right - Spotify login
 
 1. From web application homepage User presses button 'Get Started'
 2. From web application backend {client_id, response_type, redirect_uri, state=None, scope} send to Spotify Accounts Service. 
@@ -11,8 +10,8 @@
 7. The access_token will allow web application to make requests to the Spotify Web API
 
 
-
-* client_id     : as a registered Spotify Accounts Services developer we get unique Client ID
+Defintions:
+  client_id     : as a registered Spotify Accounts Services developer we get unique Client ID
   response_type : code
   redirect_uri  : if user successfully grants permission we redirect to our 'Upload/Take photo' page (where User will be able to take or upload photo for further analysis)
   scope         : playlist-modify-public, user-library-read
