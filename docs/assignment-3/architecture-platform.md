@@ -1,10 +1,11 @@
-# Pitches
+## Architecture
+
+The architecture that we are using for our Web application is MVC with Microservices. We will use client-to-microservice communication architecture because when the User uses web application Controller, where Model (Backend) will make requests directly to Spotify and Azure microservices only when User needs them. View will be updated once the service is done. 
 
 
-## Project idea #1
+## Platform decision
 
-Imagine you are listening to your favorite song on Spotify and you want to memorize the lyrics to sing along. In order to do so, you have to exit out of Spotify and google the song lyrics, that takes way too long! Our project idea is to provide the user with a platform that shows them interactive song lyrics along with visual imagery that will help them memorize their favorite songs. Not only does it save time from manually searching song lyrics, it will also have features that can translate the lyrics of a song and save their favorite generated image-lyric combinations of the selected song.
 
-## Project idea #2
+We are using Python Flask to call the APIs for a more secure access for the user by holding the sensitive data on the backend like tokens. Since we are using Spotify API, there a great Python library created for developers that is called Spotipy that eases the use of Spotify Web API (compared to Node.JS, Perl, Java or .NET). Moreover, Flask provides us a powerful tool called “template”, which takes care of the general page structure for the playlists that we need to generate. This really would save us a lot of time as we probably would have thousands of playlists with similar layout.
 
-You’re moving to a new city and you need to find a new place but you have no idea how to find the perfect place that has a good transportation route to your work or school, great restaurants nearby based on your cuisine preferences, and all located in a safe location. Right now, in order to do so, you would have to manually research each of those factors (i.e. search addresses for several apartments, then separately search for transportation routes nearby and compare the search side by side and pinpoint your location to the route - all of which takes too much time and energy) Our project would gather all the information for the user and provide them with several optimal locations that satisfy all considerations the tenants care about. It provides the user with filters that will consider your safety, access to transportation, cuisine preferences, preferred attractions nearby based on your interests.
+Although Node.js is also a programming language, which is known for providing a basic functionality for web developing. The syntax of the language is harder to get familiar with. Moreover, compared with Python, Node.js is still a young language, and its library is not as mature and stable as Python’s. Therefore, we chose to use Flask rather than Node.JS considering that we can gain more support from the community if we encounter any problem. In addition, given Spotipy already in there to take care our access to Spotify API.
