@@ -1,0 +1,7 @@
+spotipy==2.4.4
+pandas==0.24.2
+Flask==1.0.3
+opencv-python
+azure-cognitiveservices-vision-face
+azure.cosmos
+flask_cors

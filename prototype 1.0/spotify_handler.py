@@ -67,7 +67,7 @@ def set_token():
 ##Return user's saved tracks
 @app.route('/list_user_tracks')
 def get_track():
-    token = set_token()
+    token = ()
     list_songs = []
     if token:
         print("USERNAME : ", username)
