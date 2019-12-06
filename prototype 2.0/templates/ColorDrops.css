@@ -12,6 +12,35 @@ body {
   overflow: hidden;
 }
 
+button {
+  position:relative;
+  text-transform: uppercase;
+	background:linear-gradient(to bottom, #000000 5%, #00ff66 100%);
+	background-color:#000000;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: Menlo;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+
+ transition: all 0.2s ease-in-out;
+}
+button:hover {
+	background:linear-gradient(to bottom, #00ff66 5%, #000000 50%);
+	background-color:#00ff66;
+}
+
+.Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrap {
   position: relative;
   height: 100%;
@@ -22,7 +51,7 @@ body {
   height: 400px;
   width: 0.69444%;
   margin-top: -400px;
-  animation: drop 4s infinite ease-in;
+  animation: drop 9s infinite ease-in;
 }
 .c:after {
   content: "";
@@ -61,7 +90,6 @@ body {
 .c:nth-child(3):after {
   background: #ff1b00;
 }
-
 .c:nth-child(4) {
   left: 2.08332%;
   background-image: linear-gradient(to bottom, black, rgba(255, 35, 0, 0.8));
