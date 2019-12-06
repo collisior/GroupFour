@@ -45,3 +45,5 @@ def get_face_emotion_information(input_file_path):
         Dict["surprise"] = face.face_attributes.emotion.surprise
         returning_dictionary["face" + str(count)] = Dict
     return returning_dictionary
+
+print(get_face_emotion_information("/Users/camillasatte/Documents/azure-emotion/kiss.jpg"))

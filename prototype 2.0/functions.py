@@ -22,9 +22,11 @@ def authorize(response, scope=SCOPE, client_id=CLIENT_ID,
     sp_oauth = oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri,
                                    scope=scope, cache_path='.cache-temp')
     code = sp_oauth.parse_response_code(response)
-    sp_oauth.get_access_token(code)
+    t = sp_oauth.get_access_token(code)
     token = util.prompt_for_user_token('temp', scope, client_id,
                                        client_secret, redirect_uri)
+    print("TOKEN SPOT", t)
+
     spotify_object = spotipy.Spotify(auth=token)
     username = spotify_object.current_user()['id']
     open('.cache-' + username, 'w').write(open('.cache-temp', 'r').read())
@@ -40,25 +42,37 @@ def logger(username, event):
     log.to_csv('log.csv', index=False)
 
 
-def aggregate_top_artists(sp):
-    print('...getting your top artists')
-    top_artists_name = []
-    top_artists_uri = []
+def get_current_user_saved_tracks(sp):
+    saved_tracks = []
 
-    ranges = ['short_term', 'medium_term', 'long_term']
-    for r in ranges:
-        top_artists_all_data = sp.current_user_top_artists(limit = 50, time_range = r)
-        top_artists_data = top_artists_all_data['items']
-        for artist_data in top_artists_data:
-            if artist_data["name"] not in top_artists_name:
-                top_artists_name.append(artist_data['name'])
-                top_artists_uri.append(artist_data['uri'])
+    results = sp.current_user_saved_tracks(limit=10, offset=10)
+    total = results['total']
+    print('  ')
+    print('total', total)
+    print('  ')
+    limit = 50
+    offset = 0
+    while total > offset+limit:
+        results = sp.current_user_saved_tracks(limit, offset)
+        offset += limit
+        for i in range(limit):
+            trackid = results['items'][i]['track']['id']
+            print(trackid)
+            saved_tracks.append(trackid)
+        print(total - offset)
+        print(offset)
+        if (total-offset-limit)<0:
+            print(total-offset-limit, "LIMIT")
+            limit = total-offset
+            print(limit)
 
-    followed_artists_all_data = sp.current_user_followed_artists(limit = 50)
-    followed_artists_data = (followed_artists_all_data['artists'])
-    for artist_data in followed_artists_data["items"]:
-        print(artist_data["name"])
-        if artist_data["name"] not in top_artists_name:
-            top_artists_name.append(artist_data['name'])
-            top_artists_uri.append(artist_data['uri'])
-    return top_artists_uri
+
+    print("LENGTH   -    ", len(saved_tracks))
+
+
+
+def audio_tracks_get(sp):
+    playlist_to_save = []
+    saved_tracks = []
+    get_current_user_saved_tracks(sp)
+

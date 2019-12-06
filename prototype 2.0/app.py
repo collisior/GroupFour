@@ -2,7 +2,7 @@
 import pandas
 from flask import Flask, request, render_template, redirect
 import spotipy.oauth2 as oauth2
-from functions import authorize, initializer, aggregate_top_artists, logger
+from functions import authorize, initializer, audio_tracks_get, logger
 from secret import SCOPE, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI
 
 
@@ -26,7 +26,7 @@ def flask_app():
         username = authorize(response)
         logger(username, 'attempt')
         spotify_object = initializer(username)
-        aggregate_top_artists(spotify_object)
+        audio_tracks_get(spotify_object)
         logger(username, 'success')
         return render_template('authorized.html')
 
