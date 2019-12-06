@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="retrieve-form" action="{{ url_for('retrieve') }}" method="POST" enctype="multipart/form-data">
+        <strong>Type in User_id to retrieve Image:</strong><br>
+        <input id="TypeInUsrID" type="text" name="uid">
+        <div id="msg"></div>
+        <input type="submit" value="IDtoRetrieve" id="retrieve-button">
+    </form>
+</body>
+</html>
