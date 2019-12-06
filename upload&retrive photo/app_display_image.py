@@ -1,10 +1,9 @@
 import os
-from uuid import uuid4
-
 from flask import Flask, request, render_template, send_from_directory
 
-app = Flask(__name__)
-# app = Flask(__name__, static_folder="images")
+from src import uploadPhoto
+
+app = Flask(__name__, static_folder="images")
 
 
 
@@ -17,7 +16,6 @@ def index():
 @app.route("/upload", methods=["POST"])
 def upload():
     target = os.path.join(APP_ROOT, 'images/')
-    # target = os.path.join(APP_ROOT, 'static/')
     print(target)
     if not os.path.isdir(target):
             os.mkdir(target)
@@ -32,6 +30,9 @@ def upload():
         print ("Accept incoming file:", filename)
         print ("Save it to:", destination)
         upload.save(destination)
+
+        uploadPhoto.insertBLOB("6rqhFgbbKwnb9MLmUQDhG7", "Eric",destination)
+        print ("inserted image to database")
 
     # return send_from_directory("images", filename, as_attachment=True)
     return render_template("complete.html", image_name=filename)
