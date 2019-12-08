@@ -11,6 +11,10 @@ def get_face_emotion_information(input_file_path):
     will be returned.
     Note: .png, .jpg, or .gif file type only. Allowed file size is from 1KB to 6MB
     """
+    # # The resource key for the MistyFaceEmotionDetection Resource on Azure
+    # The variable is for the ACS API, created with the cognitive services resource
+    COGNITIVE_SERVICE_KEY = "1837b9d29e0b4a22843d103a7ca8b3c9"
+    COGNITIVE_SERVICE_ENDPOINT = "https://westus2.api.cognitive.microsoft.com/"
 
     # Authenticating the Client
     face_client = FaceClient(COGNITIVE_SERVICE_ENDPOINT, CognitiveServicesCredentials(COGNITIVE_SERVICE_KEY))
@@ -33,7 +37,6 @@ def get_face_emotion_information(input_file_path):
     # to the returning_dictionary dictionary.
 
     for face in detected_faces:
-        count += 1
         Dict = {}
         Dict["anger"] = face.face_attributes.emotion.anger
         Dict["contempt"] = face.face_attributes.emotion.contempt
@@ -44,4 +47,21 @@ def get_face_emotion_information(input_file_path):
         Dict["sadness"] = face.face_attributes.emotion.sadness
         Dict["surprise"] = face.face_attributes.emotion.surprise
         returning_dictionary["face" + str(count)] = Dict
-    return returning_dictionary
+        count += 1
+
+    print(returning_dictionary)
+
+    d = returning_dictionary.get('face' + str(0))
+    # taking list of car values in v
+    v = list(d.values())
+    # taking list of car keys in v
+    k = list(d.keys())
+    print(k[v.index(max(v))])
+    emotion = k[v.index(max(v))]
+
+    return emotion
+
+
+file_dest = "/Users/camillasatte/Documents/GitHub/Software-Engineering-Project/prototype 2.0/images/elon.jpg"
+# dict = get_face_emotion_information(file_dest)
+# print(get_max_mood(dict[0]))

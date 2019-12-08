@@ -4,6 +4,7 @@ from flask import Flask, request, render_template, redirect, send_from_directory
 import spotipy.oauth2 as oauth2
 from functions import authorize, initializer, aggregate_top_artists, logger
 from secret import SCOPE, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI
+from azure_functions import get_face_emotion_information
 import azure_functions
 
 
@@ -50,10 +51,12 @@ def flask_app():
             print(upload)
             print("{} is the file name".format(upload.filename))
             filename = upload.filename
-            destination = "/".join([target, filename])
-            print ("Accept incoming file:", filename)
-            print ("Save it to:", destination)
+            destination = "".join([target, filename])
+            print("Accept incoming file:", filename)
+            print("Save it to:", destination)
             upload.save(destination)
+            emotion = get_face_emotion_information(destination)
+
 
     
         # return send_from_directory("images", filename, as_attachment=True)
