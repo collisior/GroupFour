@@ -49,8 +49,6 @@ def get_face_emotion_information(input_file_path):
         returning_dictionary["face" + str(count)] = Dict
         count += 1
 
-    print(returning_dictionary)
-
     d = returning_dictionary.get('face' + str(0))
     # taking list of car values in v
     v = list(d.values())
@@ -60,8 +58,3 @@ def get_face_emotion_information(input_file_path):
     emotion = k[v.index(max(v))]
 
     return emotion
-
-
-file_dest = "/Users/camillasatte/Documents/GitHub/Software-Engineering-Project/prototype 2.0/images/elon.jpg"
-# dict = get_face_emotion_information(file_dest)
-# print(get_max_mood(dict[0]))
