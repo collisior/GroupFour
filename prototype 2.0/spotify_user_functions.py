@@ -18,7 +18,7 @@ def create_playlist(sp, filtered_tracks, emotion, num_of_tracks):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    playlist_all_data = sp.user_playlist_create(user_id, " moodify "+str(current_time)+str(emotion))
+    playlist_all_data = sp.user_playlist_create(user_id, "Moodify "+str(current_time)+" "+str(emotion))
     playlist_id = playlist_all_data["id"]
 
     random.shuffle(filtered_tracks)
