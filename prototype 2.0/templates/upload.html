@@ -3,174 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Moodify</title>
-        <link rel="stylesheet" href= "{{ url_for('static', filename='ColorDrops.css') }}">
+        <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </head>
 
     
 <body style="background-color: #191414;">
 
-
-<form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
-
-    <strong>Files:</strong><br>
-    <input id="file-picker" type="file" name="file" accept="image/*" multiple>
-    <div id="msg"></div>
-    <input type="submit" value="Upload!" id="upload-button">
-</form>
-
-<div class='wrap'>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-  <div class='c'></div>
-</div>
-
             <style>
             p {
                 position:relative;
                 top: 40px;
-                z-index: 4;
                 text-align:center
 
             }
@@ -184,7 +27,36 @@
                 </div>
                 
                 
+            <style>
+            p {
+                position:relative;
+                top: 20px;
+                text-align:center
+
+            }
+            mark {
+              color: white;
+            }
+            </style>
+            
+                <div style="text-align:center;">
+                    <font size="10"> <mark><p>Upload your file</p></mark> </font>
+                </div>
+                
+            <div class='table'>
+                <div class='cell'>
+                    <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                        <p><input id="file-picker" type="file" name="file" accept="image/*" multiple></p>
+                        <div id="msg"></div>
+                        <br />
+                        <p><input type="submit" value="Upload!" id="upload-button"></p>
+                        <br />
+                    </form>
+                </div>
+            </div>
+            
 </body>
+
 
 <script>
 

@@ -6,12 +6,12 @@ from functions import authorize, initializer, get_playlist, logger, get_current_
 from secret import SCOPE, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI
 from azure_functions import get_face_emotion_information
 import os
-from flask_sqlalchemy import SQLAlchemy
-from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
+#from flask_sqlalchemy import SQLAlchemy
+#from flask_script import Manager
+#from flask_migrate import Migrate, MigrateCommand
 
 
-app = Flask(__name__, static_folder="images")
+app = Flask(__name__, static_folder="static")
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 # app.secret_key = os.urandom(24)
 #
@@ -30,14 +30,13 @@ app = Flask(__name__, static_folder="images")
 
 def flask_app():
 
-    app = Flask(__name__, static_folder="images")
+    app = Flask(__name__, static_folder="static")
     APP_ROOT = os.path.dirname(os.path.abspath(__file__))
     token = ''
 
     @app.route('/', methods=['GET'])
     def index():
         return render_template('index.html')
-
 
     @app.route('/click', methods=['GET'])
     def click():
