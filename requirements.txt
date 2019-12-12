@@ -1,2 +1,26 @@
-testing
-ome changes
+# This file is used by pip to install required packages to run Moodify
+# Usage: pip install -r requirements.txt
+
+# Flask Framework
+Flask==1.1.1
+
+# Flask Packages
+Flask-Login==0.4.0
+Flask-Migrate==2.0.2
+Flask-Script==2.0.5
+Flask-SQLAlchemy==2.4.1
+Flask-WTF==0.14.2
+Flask-User==1.0.1.5
+flask_cors
+opencv-python
+pandas==0.24.2
+
+# Spotipy
+requests==2.3.0
+spotipy==2.4.4
+oauth2
+
+
+#Azure
+azure-cognitiveservices-vision-face
+azure.cosmos
