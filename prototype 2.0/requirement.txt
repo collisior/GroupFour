@@ -13,7 +13,7 @@ Flask-WTF==0.14.2
 Flask-User==1.0.1.5
 
 # Spotipy
-requests==2.3.0
+requests==2.20.0
 spotipy
 requests-oauth2
 oauth2
