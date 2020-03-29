@@ -1,4 +1,6 @@
-# Group Four
+# Moodafy
+
+Web Application based on Microsoft Cognitive Services and Spotify APIs.
 
 Project repository for the CS411 Software Engineering course. <br />
 Fall 2019, Boston University.
