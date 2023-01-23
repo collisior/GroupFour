@@ -16,7 +16,7 @@ opencv-python
 pandas==0.24.2
 
 # Spotipy
-spotipy==2.4.4
+spotipy==2.22.1
 oauth2
 
 
